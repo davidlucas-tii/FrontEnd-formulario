@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Formulário</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>Formulário para compra de Pacote de adesivos</h2>
+      </div>
+
+      <form id="form" class="form">
+        <div class="form-control erro">
+          <label for="username">Nome completo</label>
+          <input
+            type="text"
+            id="username"
+            placeholder="Digite o seu nome ..."
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+
+        <div class="form-control erro">
+          <label for="email">Email</label>
+          <input type="text" id="email" placeholder="Digite seu email.." />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+
+        <div class="form-control">
+          <label for="adesivo">Quais adesivos:</label>
+        </div>
+
+        <div class="form-control">
+          <center>
+            <input id="checkReact" type="checkbox" />
+            <label for="checkReact">React </label>
+            <i class="fas fa-exclamation-circle"></i>
+            <i class="fas fa-check-circle"></i>
+            <small>Mensagem de erro</small>
+
+            <input id="checkVue" type="checkbox" />
+            <label for="checkVue">Vue </label>
+            <i class="fas fa-exclamation-circle"></i>
+            <i class="fas fa-check-circle"></i>
+            <small>Mensagem de erro</small>
+
+            <input id="checkAngular" type="checkbox" />
+            <label for="checkAngular">Angular </label>
+            <i class="fas fa-exclamation-circle"></i>
+            <i class="fas fa-check-circle"></i>
+            <small>Mensagem de erro</small>
+          </center>
+        </div>
+
+        <div class="form-control">
+          <label for="unidadesAdesivo">Quantos adesivos de cada?</label>
+          <div class="wrapper">
+            <span class="minus">-</span>
+            <span class="menos">01</span>
+            <span class="plus">+</span>
+          </div>
+
+          <script>
+            const plus = document.querySelector(".plus"),
+              minus = document.querySelector(".minus"),
+              menos = document.querySelector(".menos");
+            let a = 1;
+            plus.addEventListener("click", () => {
+              a++;
+              a = a < 10 ? "0" + a : a;
+              menos.innerText = a;
+              console.log(a);
+            });
+
+            minus.addEventListener("click", () => {
+              if (a > 1) {
+                a--;
+                a = a < 10 ? "0" + a : a;
+                menos.innerText = a;
+              }
+            });
+          </script>
+        </div>
+
+        <div class="form-control">
+          <label for="observ">Observações</label>
+          <br />
+          <center>
+            <textarea id="story" name="story" rows="5" cols="33">
+            Alguma dúvida? Recado?
+          </textarea
+            >
+          </center>
+        </div>
+
+        <form id="form" class="form">
+          <div class="form-control erro">
+            <label for="formpag">Formas de pagamento</label></centeer>
+            <br />
+            <center>
+              <select id="appearance-select">
+                <option>Selecione</option>
+                <option>Boleto</option>
+                <option>Cartão de Credito</option>
+                <option>Pix QRCode</option>
+              </select>
+            </center>
+          </div>
+
+        <button type="submit">Compra Agora</button>
+      </form>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/f9e19193d6.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./scripts.js"></script>
+  </body>
+</html>
